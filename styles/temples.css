@@ -42,6 +42,7 @@ content: "☰";
 content: "✕";
 }
 nav {
+display: flex;
 position: absolute;
 top: 100%;
 left: 0;
@@ -52,6 +53,7 @@ background: var(--primary);
 list-style: none;
 display: none;
 flex-direction: column;
+width: 100%;
 }
 .navigation.open {
 display: flex;
