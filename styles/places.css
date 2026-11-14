@@ -1,0 +1,103 @@
+:root {
+  --primary: #007A4D; /* SA flag green */
+  --secondary: #DE3831; /* SA flag red */
+  --accent: #FFB612; /* SA flag gold */
+  --dark: #002395; /* SA flag blue */
+  --light: #f5f5f5;
+  --white: #ffffff;
+  --text: #222;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--light);
+}
+
+header {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 10px solid var(--accent);
+}
+
+h1 { font-size: 2rem; }
+h2 { text-align: center; margin-bottom: 1rem; }
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 8px solid var(--secondary);
+}
+
+/* Mobile - stacked */
+.data, .weather {
+  background: var(--white);
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.data dl div, .weather dl div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+}
+
+dt { font-weight: bold; text-align: right; }
+dd { text-align: left; }
+
+.weather { text-align: center; }
+.weather-icon { margin: 0 auto 1rem; }
+
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+}
+
+
+@media (min-width: 1000px) {
+  main { position: relative; }
+
+  .hero img { height: 600px; object-fit: cover; }
+
+  .data, .weather {
+    position: absolute;
+    opacity: 0.92;
+    width: 300px;
+    margin: 0;
+  }
+
+  .data { top: 2rem; left: 2rem; }
+  .weather { bottom: 2rem; right: 2rem; }
+
+  .weather-icon { display: none; } 
+
+  
+  .weather h2::after {
+    content: " ⛅";
+  }
+
+  .weather h2 {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 0.5rem;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    text-align: left;
+  }
+
+  .data h2 {
+    background: var(--dark);
+    color: var(--white);
+    padding: 0.5rem;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    text-align: left;
+  }
+}
